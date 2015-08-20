@@ -17,25 +17,26 @@
 # - Get drunker
 
 # Import some modules
-import sys, time
+import sys, time, argparse
 
 # Check for arguments
 def arg_check():
-    if len(sys.argv) == 2:
-        argument = sys.argv[1]
-        return argument
-    else:
-        print("Usage: ./surlybot.py <argument>")
-        print("Example: ./surlybot.py 99")
-        sys.exit()
-        
+    parser = argparse.ArgumentParser(prog='surlybot.py')
+    parser.add_argument('-b', '--beverage', required=False, action='store', dest='bev_type', help='Requires a valid beverage')
+    parser.add_argument('-n', '--number', required=False, action='store', dest='bottle_num', help='Requires a number greater than 0')
+    args = vars(parser.parse_args())
+    bev_type = args['bev_type']
+    bottle_num = args['bottle_num']
+    return bev_type, bottle_num
+
 # Sing the song
-def singing(bottle_num):
+def singing(bev_type, bottle_num):
+	bev_type = bev_type
 	bottle_num = bottle_num
 	while bottle_num > 0:
 		# This is the song
-		line1 = str(bottle_num) + " bottles of beer on the wall\n"
-		line2 = str(bottle_num) + " bottles of beer\n"
+		line1 = str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n"
+		line2 = str(bottle_num) + " bottles of " + str(bev_type) + "\n"
 		line3 = "Take one down\n"
 		line4 = "Pass it around\n"
 		
@@ -43,7 +44,7 @@ def singing(bottle_num):
 		bottle_num -= 1
 
 		# Now there is one less bottle on the wall
-		line5 = str(bottle_num) + " bottles of beer on the wall\n\n"
+		line5 = str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n\n"
 
 		# This is where the song comes together
 		sing_it = line1 + line2 + line3 + line4 + line5
@@ -63,9 +64,8 @@ def singing(bottle_num):
 
 # Code goes below here
 def main():
-	bottle_num = int(arg_check())
-	print(bottle_num)
-	singing(bottle_num)
+	bev_type, bottle_num = int(arg_check())
+	singing(bev_type, bottle_num)
 
 # Run the main script
 main()
