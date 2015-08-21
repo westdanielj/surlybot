@@ -14,6 +14,7 @@
 # Known Issues/ToDo
 # - Finish Writing the Script
 # - Get drunker
+# - Add lyrics to a list and then loop it
 
 # Import some modules
 import sys, time, argparse
