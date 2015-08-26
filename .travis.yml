@@ -9,6 +9,6 @@ python:
   - "3.5-dev"
   - "nightly"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+#install: "pip install -r requirements.txt"
 # command to run tests
 script: surlybot.py -n 10 -b beer
