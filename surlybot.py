@@ -7,6 +7,7 @@
 #
 # 08/14/2015 - Dan West - Initial Version
 # 08/21/2015 - Dan West - Added optional arguments for specifying the beverage type and number to start with
+# 09/02/2015 - Dan West - Added a list and loop for the lyrics
 #
 # Notes
 # I just needed something to test Github
@@ -14,7 +15,6 @@
 # Known Issues/ToDo
 # - Finish Writing the Script
 # - Get drunker
-# - Add lyrics to a list and then loop it
 
 # Import some modules
 import sys, time, argparse
@@ -34,35 +34,27 @@ def singing(bev_type, bottle_num):
 	bev_type = bev_type
 	bottle_num = bottle_num
 	while bottle_num > 0:
-		# This is the song
-		line1 = str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n"
-		line2 = str(bottle_num) + " bottles of " + str(bev_type) + "\n"
-		line3 = "Take one down\n"
-		line4 = "Pass it around\n"
+
+		# Add lyrics to each verse
+		verse = []
+		verse.append(str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n")
+		verse.append(str(bottle_num) + " bottles of " + str(bev_type) + "\n")
+		verse.append("Take one down\n")
+		verse.append("Pass it around\n")
 		
 		# Take a bottle off the wall
 		bottle_num -= 1
-
+		
 		# Now there is one less bottle on the wall
-		line5 = str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n\n"
-
-		# This is where the song comes together
-		sing_it = line1 + line2 + line3 + line4 + line5
-
+		verse.append(str(bottle_num) + " bottles of " + str(bev_type) + " on the wall\n")
+		
 		# Actually sing now
-		#print(sing_it)
-		print(line1)
-		time.sleep(2)
-		print(line2)
-		time.sleep(2)
-		print(line3)
-		time.sleep(2)
-		print(line4)
-		time.sleep(2)
-		print(line5)
+		for line in verse:
+			print(line)
+			time.sleep(2)	
 		time.sleep(3)
 
-# Code goes below here
+# Main Function
 def main():
 	# Check optional arguments
 	bev_type, bottle_num = arg_check()
