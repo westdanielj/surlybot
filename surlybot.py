@@ -52,7 +52,7 @@ def singing(bev_type, bottle_num):
 		for line in verse:
 			print(line)
 			time.sleep(2)	
-		time.sleep(3)
+		time.sleep(1)
 
 # Main Function
 def main():
