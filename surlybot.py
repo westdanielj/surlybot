@@ -29,22 +29,11 @@ def arg_check():
     bottle_num = int(args['bottle_num'])
     return bev_type, bottle_num
 
-# Beer printer
-def beer_printer(bottle_num):
-	mug_icon = u"\U0001F37A"
-	mugs = ""
-	for count in range(bottle_num):
-		mugs += mug_icon + " "
-	print(mugs)
-
 # Sing the song
 def singing(bev_type, bottle_num):
 	bev_type = bev_type
 	bottle_num = bottle_num
 	while bottle_num > 0:
-		
-		# Print bottles remaining
-		beer_printer(bottle_num)
 
 		# Add lyrics to each verse
 		verse = []
@@ -72,8 +61,6 @@ def main():
 
 	# Start singing the song
 	singing(bev_type, bottle_num)
-	
-	# Congrats message
-	print("Congratulations, you are now drunk.")
+
 # Run the main script
 main()
