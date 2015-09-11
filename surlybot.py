@@ -23,12 +23,23 @@ import sys, time, argparse
 def arg_check():
     parser = argparse.ArgumentParser(prog='surlybot.py')
     parser.add_argument('-b', '--beverage', default='beer', required=False, action='store', dest='bev_type', help='Requires a valid beverage')
-    parser.add_argument('-n', '--number', default='10', required=False, action='store', dest='bottle_num', help='Requires a number greater than 0')
+    parser.add_argument('-n', '--number', default='5', required=False, action='store', dest='bottle_num', help='Requires a number greater than 0')
     args = vars(parser.parse_args())
     bev_type = str(args['bev_type'])
     bottle_num = int(args['bottle_num'])
     return bev_type, bottle_num
 
+<<<<<<< HEAD
+=======
+# Beer printer
+def beer_printer(bottle_num):
+	mug_icon = u"\U0001F37A".encode('utf-8')
+	mugs = ""
+	for count in range(bottle_num):
+		mugs += str(mug_icon) + " "
+	print(mugs)
+
+>>>>>>> djw/surlybot.py
 # Sing the song
 def singing(bev_type, bottle_num):
 	bev_type = bev_type
