@@ -29,8 +29,6 @@ def arg_check():
     bottle_num = int(args['bottle_num'])
     return bev_type, bottle_num
 
-<<<<<<< HEAD
-=======
 # Beer printer
 def beer_printer(bottle_num):
 	mug_icon = u"\U0001F37A".encode('utf-8')
@@ -39,7 +37,6 @@ def beer_printer(bottle_num):
 		mugs += str(mug_icon) + " "
 	print(mugs)
 
->>>>>>> djw/surlybot.py
 # Sing the song
 def singing(bev_type, bottle_num):
 	bev_type = bev_type
