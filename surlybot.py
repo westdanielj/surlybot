@@ -31,8 +31,8 @@ def arg_check():
 
 # Beer printer
 def beer_printer(bottle_num):
-	mug_icon = u"\U0001F37A"
-	mug_icon = mug_icon.encode('utf-8')
+	mug_icon = u"\U0001F37A".encode('utf-8')
+#	mug_icon = mug_icon.encode('utf-8')
 	mugs = ""
 	for count in range(bottle_num):
 		mugs += mug_icon + " "
