@@ -8,6 +8,7 @@
 # 08/14/2015 - Dan West - Initial Version
 # 08/21/2015 - Dan West - Added optional arguments for specifying the beverage type and number to start with
 # 09/02/2015 - Dan West - Added a list and loop for the lyrics
+# 09/11/2015 - Dan West - Fixed some unicode issue
 #
 # Notes
 # I just needed something to test Github
