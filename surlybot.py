@@ -76,5 +76,6 @@ def main():
 	
 	# Congrats message
 	print("Congratulations, you are now drunk.")
+
 # Run the main script
 main()
