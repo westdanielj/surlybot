@@ -70,6 +70,12 @@ def main():
 
 	# Start singing the song
 	singing(bev_type, bottle_num)
+<<<<<<< HEAD
+=======
+	
+	# Congrats message
+	print("Congratulations, you are now drunk.")
+>>>>>>> djw/surlybot.py
 
 # Run the main script
 main()
