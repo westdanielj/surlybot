@@ -14,7 +14,7 @@
 # I just needed something to test Github
 #
 # Known Issues/ToDo
-# - Finish Writing the Script
+# - Fix bug with Python 3.2
 # - Get drunker
 
 # Import some modules
