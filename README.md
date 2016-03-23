@@ -1,4 +1,2 @@
-# surlybot
-#
-# A very musical bot
+# surlybot -  A very musical bot
 Woot
