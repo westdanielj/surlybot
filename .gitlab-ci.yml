@@ -6,8 +6,7 @@ stages:
 
 build_job:
   script:
-    #- python3 surlybot.py -b beer -n 5
-    - tree /var/lib/gitlab-runner/builds/
+    - python3 surlybot.py -b beer -n 5
   stage: build
 
 cleanup_job:
