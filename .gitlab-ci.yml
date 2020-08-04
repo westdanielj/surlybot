@@ -1,0 +1,17 @@
+# This is a ci file for running a test script
+
+stages:
+  - build
+  - cleanup
+
+build_job:
+  script:
+    - /usr/bin/python surlybot.py -b beer -n 5
+  stage: build
+
+cleanup_job:
+  dependencies:
+    - build_job
+  script:
+    - echo "all clean"
+  stage: cleanup
