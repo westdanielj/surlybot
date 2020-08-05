@@ -4,8 +4,9 @@ stages:
   - build
   - cleanup
 
-tags:
-  - docker
+jobs:
+  tags:
+    - docker
 
 build_job:
   script:
