@@ -2,12 +2,22 @@
 image: ubuntu:focal
 
 stages:
+  - setup
   - build
   - cleanup
+
+setup_job:
+  tags:
+    - docker
+  script:
+    - apt-get update -qy
+    - apt-get install -y python3 python3-pip
 
 build_job:
   tags:
     - docker
+  dependencies:
+    - setup_job
   script:
     - python3 surlybot.py -b beer -n 5
   stage: build
