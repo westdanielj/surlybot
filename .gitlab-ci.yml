@@ -20,7 +20,7 @@ build_job:
   dependencies:
     - setup_job
   script:
-    - python3 surlybot.py -b beer -n 5
+    - /usr/bin/python3 surlybot.py -b beer -n 5
   stage: build
 
 cleanup_job:
