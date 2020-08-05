@@ -12,6 +12,7 @@ setup_job:
   script:
     - apt-get update -qy
     - apt-get install -y python3 python3-pip
+  stage: setup
 
 build_job:
   tags:
