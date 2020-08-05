@@ -4,16 +4,16 @@ stages:
   - build
   - cleanup
 
-jobs:
+build_job:
   tags:
     - docker
-
-build_job:
   script:
     - python3 surlybot.py -b beer -n 5
   stage: build
 
 cleanup_job:
+  tags:
+    - docker
   dependencies:
     - build_job
   script:
