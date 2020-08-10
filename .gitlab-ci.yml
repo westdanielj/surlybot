@@ -15,7 +15,7 @@ build_job:
   artifacts:
     paths:
       - test.txt
-    expire_in: 1 week
+    #expire_in: 1 week
   stage: build
 
 cleanup_job:
