@@ -11,8 +11,8 @@ build_job:
     - apt-get update -qy
     - apt-get install -y python3 python3-pip
     - /usr/bin/python3 surlybot.py -b beer -n 5 > test.txt
-  #artifacts:
-  #  paths:
-  #    - test.txt
+  artifacts:
+    paths:
+      - test.txt
   #  expire_in: 1 week
   stage: build
