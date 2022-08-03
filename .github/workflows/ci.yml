@@ -3,7 +3,9 @@ name: surlybot
 on:
   push:
     tags: docker
-    branches: master
+    branches:
+      - master
+      - self-hosted-runner
 
 jobs:
   build_job:
