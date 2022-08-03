@@ -7,8 +7,8 @@ on:
 
 jobs:
   build_job:
-    #runs-on: self-hosted
-    runs-on: ubuntu-focal
+    runs-on: self-hosted
+    #runs-on: ubuntu-focal
     steps:
       - name: Checkout
         uses: actions/checkout@v2
