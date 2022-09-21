@@ -4,14 +4,14 @@ env:
   CLUSTER: ${{ secrets.CLUSTER }}
 on:
   push:
-    tags: "$CLUSTER"
+    tags: [ "${{ CLUSTER }}" ]
     branches:
       - master
       - self-hosted-runner
 
 jobs:
   build_job:
-    runs-on: "$CLUSTER"
+    runs-on: [ "${{ CLUSTER }}" ]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
