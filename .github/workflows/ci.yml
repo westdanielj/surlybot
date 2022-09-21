@@ -1,16 +1,17 @@
 # This is a ci file for running a test script
 name: surlybot
+env:
+  CLUSTER: ${{ secrets.CLUSTER }}
 on:
   push:
-    tags: docker
+    tags: $CLUSTER
     branches:
       - master
       - self-hosted-runner
 
 jobs:
   build_job:
-    runs-on: self-hosted
-    #runs-on: ubuntu-20.04
+    runs-on: $CLUSTER
     steps:
       - name: Checkout
         uses: actions/checkout@v2
