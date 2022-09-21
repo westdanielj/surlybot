@@ -4,10 +4,12 @@ image: ubuntu:focal
 stages:
   - build
 
+variables:
+  CLUSTER: kubernetes
+
 build_job:
   tags:
-    - docker
-    - stardust
+    - $CLUSTER
   script:
     - apt-get update -qy
     - apt-get install -y python3 python3-pip
