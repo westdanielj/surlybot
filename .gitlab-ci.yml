@@ -6,8 +6,7 @@ stages:
 
 build_job:
   tags:
-    - ${CLUSTER}
-    - self-hosted
+    - $CLUSTER
   script:
     - apt-get update -qy
     - apt-get install -y python3 python3-pip
