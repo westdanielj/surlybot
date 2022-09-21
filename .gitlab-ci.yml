@@ -4,6 +4,9 @@ image: ubuntu:focal
 stages:
   - build
 
+variables:
+  CLUSTER: kubernetes
+
 build_job:
   tags:
     - $CLUSTER
