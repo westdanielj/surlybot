@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+      - name: Cluster Check
+        run: echo "$CLUSTER"
       - name: Update OS
         run: sudo apt-get update -qy
       - name: Install Python3
