@@ -10,7 +10,7 @@ on:
 
 jobs:
   build_job:
-    runs-on: ${{ CLUSTER }}
+    runs-on: [self-hosted, $CLUSTER]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
