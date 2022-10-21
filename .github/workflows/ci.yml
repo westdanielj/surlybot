@@ -12,7 +12,7 @@ on:
 jobs:
   build_job:
     #runs-on: [self-hosted, ubuntu-latest]
-    runs-on: [ubuntu-${UBUNTU_VERSION}]
+    runs-on: "ubuntu-${UBUNTU_VERSION}"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
