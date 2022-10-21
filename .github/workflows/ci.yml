@@ -2,6 +2,7 @@
 name: surlybot
 env:
   CLUSTER: ${{ secrets.CLUSTER }}
+  UBUNTU_VERSION: "20.04"
 on:
   push:
     branches:
@@ -11,7 +12,7 @@ on:
 jobs:
   build_job:
     #runs-on: [self-hosted, ubuntu-latest]
-    runs-on: [ubuntu-20.04]
+    runs-on: ubuntu-${UBUNTU_VERSION}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
