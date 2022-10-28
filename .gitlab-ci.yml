@@ -3,6 +3,7 @@ image: ubuntu:focal
 
 stages:
   - build
+  - caching
 
 variables:
   CLUSTER: kubernetes
@@ -19,3 +20,21 @@ build_job:
       - artifact.txt
     expire_in: 1 week
   stage: build
+
+caching:
+  tags:
+    - $CLUSTER
+  script:
+    - mkdir -p .cache
+    - |
+      if [[ -f .cache/test.txt ]]; then
+        echo "Cached file exists."
+      else
+        echo "Cached file did not exist."
+        touch .cache/test.txt
+      fi
+cache:
+    key: common-cache-key
+    paths:
+      - .cache
+
