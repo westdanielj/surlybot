@@ -21,7 +21,7 @@ build_job:
     expire_in: 1 week
   stage: build
 
-caching:
+caching_job:
   tags:
     - $CLUSTER
   script:
@@ -38,3 +38,6 @@ cache:
     paths:
       - .cache
 
+#
+# EOF
+#
