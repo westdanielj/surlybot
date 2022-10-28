@@ -33,6 +33,7 @@ caching_job:
         echo "Cached file did not exist."
         touch .cache/test.txt
       fi
+  stage: caching
 cache:
     key: common-cache-key
     paths:
