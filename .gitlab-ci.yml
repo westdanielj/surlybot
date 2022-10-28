@@ -1,43 +1,38 @@
 # This is a ci file for running a test script
 image: ubuntu:focal
 
-stages:
-  - build
-  - caching
-
 variables:
   CLUSTER: kubernetes
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+# Cache Python Packages
+cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - .cache/pip
+
+stages:
+  - build
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y python3 python3-pip
+  - pip install --upgrade pip
+  - python -V               # Print out python version for debugging
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
 
 build_job:
   tags:
     - $CLUSTER
   script:
-    - apt-get update -qy
-    - apt-get install -y python3 python3-pip
     - /usr/bin/python3 surlybot.py -b beer -n 5 2>&1 | tee -a artifact.txt
   artifacts:
     paths:
       - artifact.txt
     expire_in: 1 week
   stage: build
-
-caching_job:
-  tags:
-    - $CLUSTER
-  script:
-    - mkdir -p .cache
-    - |
-      if [[ -f .cache/test.txt ]]; then
-        echo "Cached file exists."
-      else
-        echo "Cached file did not exist."
-        touch .cache/test.txt
-      fi
-  stage: caching
-cache:
-    key: common-cache-key
-    paths:
-      - .cache
 
 #
 # EOF
