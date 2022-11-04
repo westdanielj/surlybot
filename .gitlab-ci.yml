@@ -26,6 +26,7 @@ before_script:
 build_job:
   tags:
     - $CLUSTER
+    - Linux
   script:
     - /usr/bin/python3 surlybot.py -b beer -n 5 2>&1 | tee -a artifact.txt
   artifacts:
