@@ -1,5 +1,5 @@
 # This is a ci file for running a test script
-image: ubuntu:focal
+image: $CI_REGISTRY/ubuntu:focal
 
 variables:
   CLUSTER: kubernetes
