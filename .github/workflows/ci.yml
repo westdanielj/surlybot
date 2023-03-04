@@ -32,3 +32,11 @@ jobs:
           name: Lyrics
           path: artifact.txt
           retention-days: 7
+      - name: 'Check Disk Space'
+        run: df -Th
+      - name: 'Check Block Devices'
+        run: lsblk
+
+#
+# vim: set syntax=yaml
+#
